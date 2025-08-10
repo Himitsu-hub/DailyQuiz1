@@ -19,16 +19,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DailyQuizTheme {
-                hideSystemBars()
                 val navController = rememberNavController()
                 AppNavHost(navController = navController)
             }
         }
     }
 
-    private fun hideSystemBars() {
-        val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
-        windowInsetsController.hide(WindowInsetsCompat.Type.statusBars())
-        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
-    }
 }
